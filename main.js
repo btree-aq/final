@@ -43,7 +43,7 @@ function taskEvents(e) {
 			todos[editId].name = inputValue;
 		}
 		localStorage.setItem('todo-list', JSON.stringify(todos));
-		// show tasks in task-box
+
 		showTask('all');
 		taskInput.value = '';
 	}
@@ -69,7 +69,7 @@ function showTask(filter) {
 										<!-- edit and delete button -->
 										<ul class="task-menu">
 
-											<li onclick="deleteTask(${index})"> Delete</li>
+											<li onclick="deleteTask(${index})">delete</li>
 										</ul>
 									</div>
 								</div>
