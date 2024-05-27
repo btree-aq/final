@@ -60,7 +60,7 @@ li {
 .task-input input {
 	height: 100%;
 	width: 85%;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	padding: 0 0 0 5rem;
 	border: 1rem;
 	outline: none;
@@ -76,9 +76,6 @@ li {
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
-
-
-
 
 .filters,
 .task-box .task,
@@ -208,18 +205,13 @@ li {
 	width: auto;
 }
 
-.footer .clear-button:hover,
+
 .footer .clear-button:focus {
-	background-color: #fb8332;
-	box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+	background-color: #db8bac;
+	
 }
 
-.footer .clear-button:hover {
-	transform: translateY(-1px);
-}
 
-.footer .clear-button:active {
-	background-color: #c85000;
-	box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-	transform: translateY(0);
-}
+
+
+

@@ -27,7 +27,7 @@ filters.forEach((btn) => {
 	});
 });
 pendingTasks.addEventListener('click', filterBtn);
-clearAllBtn.addEventListener('click', clearAll);
+clearAllBtn.addEventListener('click', clearAllCompleted);
 
 function taskEvents(e) {
 	let inputValue = taskInput.value.trim();
@@ -104,9 +104,7 @@ function filterBtn() {
 }
 
 function updateStatus(selectedTask) {
-
 	let task = selectedTask.parentElement.lastElementChild;
-
 	if (selectedTask.checked) {
 		task.classList.add('checked');
 		todos[selectedTask.id].status = 'completed';
@@ -115,12 +113,10 @@ function updateStatus(selectedTask) {
 		todos[selectedTask.id].status = 'pending';
 	}
 	showTask('all');
-
 	localStorage.setItem('todo-list', JSON.stringify(todos));
 }
 
 function showMenu(selectedtask) {
-
 	let taskMenu = selectedtask.parentElement.lastElementChild;
 	taskMenu.classList.add('show');
 	document.addEventListener('click', (e) => {
@@ -130,21 +126,22 @@ function showMenu(selectedtask) {
 	});
 }
 
-
-
 function deleteTask(index) {
-
 	todos.splice(index, 1);
-
 	localStorage.setItem('todo-list', JSON.stringify(todos));
-
 	showTask('all');
 }
 
 function clearAll() {
 	todos.splice(0, todos.length);
 	localStorage.setItem('todo-list', JSON.stringify(todos));
-
 	showTask('all');
+	taskInput.focus();
+}
+
+function clearAllCompleted() {
+	todos = todos.filter((e) => (e.status != 'completed'))
+	localStorage.setItem('todo-list', JSON.stringify(todos));
+	showTask('completed');
 	taskInput.focus();
 }
